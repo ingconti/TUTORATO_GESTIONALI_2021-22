@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 // logica:
@@ -15,4 +17,5 @@
 
 //#include "main0.h"
 #include "main1.h"
+//#include "main2.h"
 
