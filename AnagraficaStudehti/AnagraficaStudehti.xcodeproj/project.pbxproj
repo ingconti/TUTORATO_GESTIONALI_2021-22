@@ -27,6 +27,7 @@
 		CE422BBB2781C31600B4E8DF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CE422BC22781C3A800B4E8DF /* main1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main1.h; sourceTree = "<group>"; };
 		CE422BC42782026500B4E8DF /* main2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main2.h; sourceTree = "<group>"; };
+		CE422BC527822E4000B4E8DF /* main3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main3.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 				CE422BBB2781C31600B4E8DF /* main.c */,
 				CE422BC22781C3A800B4E8DF /* main1.h */,
 				CE422BC42782026500B4E8DF /* main2.h */,
+				CE422BC527822E4000B4E8DF /* main3.h */,
 			);
 			path = AnagraficaStudehti;
 			sourceTree = "<group>";
