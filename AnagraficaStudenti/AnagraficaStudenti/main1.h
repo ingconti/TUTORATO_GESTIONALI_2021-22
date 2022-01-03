@@ -27,6 +27,7 @@ typedef struct Dati{
     Riga * righe;
 }Dati;
 
+
 //protos:
 ModelloDati leggiFilePrincipale(void);
 Dati leggiFileSecondario(ModelloDati md);

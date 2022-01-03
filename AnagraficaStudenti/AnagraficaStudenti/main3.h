@@ -6,14 +6,29 @@
 
 
 #define MAX_PATH 1024
+#define MAX_LEN_NOME_COLONNA 35
+#define MAX_N_COLONNE 10
+
+// tipi di colonne
+typedef enum {
+    unknown = 0,
+    intero = 1,
+    carattere = 2
+} TipoColonna;
+
 
 // colonne
+typedef struct Colonna{
+    char nome[MAX_LEN_NOME_COLONNA];
+    TipoColonna tipoColonna;
+}Colonna;
+
+
 typedef struct ModelloDati{
     bool ok;
     char fname[MAX_PATH];
     unsigned int nColonne;
-    // other data....
-    //Colonna colonne[....]
+    Colonna colonne[MAX_N_COLONNE];
 }ModelloDati;
 
 //righe:

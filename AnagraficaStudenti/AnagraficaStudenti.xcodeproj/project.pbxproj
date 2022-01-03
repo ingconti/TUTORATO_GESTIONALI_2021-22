@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE422BBC2781C31600B4E8DF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE422BBB2781C31600B4E8DF /* main.c */; };
+		CEC333B02782337C001628B5 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CEC333AE2782337C001628B5 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,11 +23,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CE422BB82781C31600B4E8DF /* AnagraficaStudehti */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AnagraficaStudehti; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE422BBB2781C31600B4E8DF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		CE422BC22781C3A800B4E8DF /* main1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main1.h; sourceTree = "<group>"; };
-		CE422BC42782026500B4E8DF /* main2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main2.h; sourceTree = "<group>"; };
-		CE422BC527822E4000B4E8DF /* main3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main3.h; sourceTree = "<group>"; };
+		CE422BB82781C31600B4E8DF /* AnagraficaStudenti */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AnagraficaStudenti; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4D708D2782F5AE00BC96E1 /* main5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main5.h; sourceTree = "<group>"; };
+		CEC333AB2782337C001628B5 /* main3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main3.h; sourceTree = "<group>"; };
+		CEC333AC2782337C001628B5 /* main4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main4.h; sourceTree = "<group>"; };
+		CEC333AD2782337C001628B5 /* main1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main1.h; sourceTree = "<group>"; };
+		CEC333AE2782337C001628B5 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		CEC333AF2782337C001628B5 /* main2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +46,7 @@
 		CE422BAF2781C31500B4E8DF = {
 			isa = PBXGroup;
 			children = (
-				CE422BBA2781C31600B4E8DF /* AnagraficaStudehti */,
+				CEC333AA2782337C001628B5 /* AnagraficaStudenti */,
 				CE422BB92781C31600B4E8DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,28 +54,31 @@
 		CE422BB92781C31600B4E8DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE422BB82781C31600B4E8DF /* AnagraficaStudehti */,
+				CE422BB82781C31600B4E8DF /* AnagraficaStudenti */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE422BBA2781C31600B4E8DF /* AnagraficaStudehti */ = {
+		CEC333AA2782337C001628B5 /* AnagraficaStudenti */ = {
 			isa = PBXGroup;
 			children = (
-				CE422BBB2781C31600B4E8DF /* main.c */,
-				CE422BC22781C3A800B4E8DF /* main1.h */,
-				CE422BC42782026500B4E8DF /* main2.h */,
-				CE422BC527822E4000B4E8DF /* main3.h */,
+				CEC333AE2782337C001628B5 /* main.c */,
+				CEC333AD2782337C001628B5 /* main1.h */,
+				CEC333AF2782337C001628B5 /* main2.h */,
+				CEC333AB2782337C001628B5 /* main3.h */,
+				CEC333AC2782337C001628B5 /* main4.h */,
+				CE4D708D2782F5AE00BC96E1 /* main5.h */,
 			);
-			path = AnagraficaStudehti;
+			name = AnagraficaStudenti;
+			path = "../../../../../../../../BigSur_110/Users/ingconti/Documents/GIT-BigSur/GITHUB/TUTORATO_GESTIONALI_2021-22/AnagraficaStudenti/AnagraficaStudenti";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE422BB72781C31600B4E8DF /* AnagraficaStudehti */ = {
+		CE422BB72781C31600B4E8DF /* AnagraficaStudenti */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE422BBF2781C31600B4E8DF /* Build configuration list for PBXNativeTarget "AnagraficaStudehti" */;
+			buildConfigurationList = CE422BBF2781C31600B4E8DF /* Build configuration list for PBXNativeTarget "AnagraficaStudenti" */;
 			buildPhases = (
 				CE422BB42781C31600B4E8DF /* Sources */,
 				CE422BB52781C31600B4E8DF /* Frameworks */,
@@ -83,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = AnagraficaStudehti;
+			name = AnagraficaStudenti;
 			productName = AnagraficaStudehti;
-			productReference = CE422BB82781C31600B4E8DF /* AnagraficaStudehti */;
+			productReference = CE422BB82781C31600B4E8DF /* AnagraficaStudenti */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +107,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE422BB32781C31500B4E8DF /* Build configuration list for PBXProject "AnagraficaStudehti" */;
+			buildConfigurationList = CE422BB32781C31500B4E8DF /* Build configuration list for PBXProject "AnagraficaStudenti" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE422BB72781C31600B4E8DF /* AnagraficaStudehti */,
+				CE422BB72781C31600B4E8DF /* AnagraficaStudenti */,
 			);
 		};
 /* End PBXProject section */
@@ -125,7 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE422BBC2781C31600B4E8DF /* main.c in Sources */,
+				CEC333B02782337C001628B5 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +271,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE422BB32781C31500B4E8DF /* Build configuration list for PBXProject "AnagraficaStudehti" */ = {
+		CE422BB32781C31500B4E8DF /* Build configuration list for PBXProject "AnagraficaStudenti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE422BBD2781C31600B4E8DF /* Debug */,
@@ -275,7 +280,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE422BBF2781C31600B4E8DF /* Build configuration list for PBXNativeTarget "AnagraficaStudehti" */ = {
+		CE422BBF2781C31600B4E8DF /* Build configuration list for PBXNativeTarget "AnagraficaStudenti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE422BC02781C31600B4E8DF /* Debug */,
