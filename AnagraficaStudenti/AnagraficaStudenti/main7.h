@@ -1,12 +1,12 @@
 //
-//  main5.h
+//  main7.h
 //  AnagraficaStudenti
 //
 //  Created by ing.conti on 02 JAN 2022.
 
 
 #define MAX_PATH 1024
-#define MAX_LEN_NOME_COLONNA 35
+#define MAX_LEN_NOME_COLONNA 35 // in effetti era x le stringhe dei valori... usiamo unica define
 #define MAX_N_COLONNE 10
 
 // tipi di colonne
@@ -33,8 +33,13 @@ typedef struct ModelloDati{
 
 //righe:
 typedef struct Riga{
-    //vuota... x ora
+    void * ptrs[MAX_N_COLONNE];
+    unsigned int nColonne; // potrebbero esseree di MENO delle colonne del modello
 }Riga;
+
+
+
+
 
 typedef struct Dati{
     bool ok;
@@ -47,6 +52,8 @@ ModelloDati leggiFilePrincipale(void);
 Dati leggiFileSecondario(ModelloDati md);
 void stampaDati(Dati dati, ModelloDati md);
 void stampaTipiColonna(ModelloDati md);
+void AggiungiRecord(ModelloDati md, Dati * dati, char * Str);
+void stampaRiga(Riga riga);
 
 
 int main(int argc, const char * argv[]) {
@@ -54,7 +61,7 @@ int main(int argc, const char * argv[]) {
     ModelloDati md = leggiFilePrincipale();
     Dati dati;
     if(md.ok) {
-        stampaTipiColonna(md);
+        // stampaTipiColonna(md);
         dati = leggiFileSecondario(md);
         if(dati.ok) {
             stampaDati(dati, md);
@@ -103,7 +110,7 @@ void aggiungiColonna(ModelloDati * md, char * rigaTesto){
     char * puntStrNomeCampo = NULL;
     char * puntStrTipoCampo = NULL;
 
-    // al primo giro va psssata stringa da analizzare.
+    // al primo giro va passata stringa da analizzare.
     char * found = strtok (rigaTesto, separators);
     while (found)
     {
@@ -115,7 +122,7 @@ void aggiungiColonna(ModelloDati * md, char * rigaTesto){
             puntStrNomeCampo = found;
         }else{
             puntStrTipoCampo = found;
-            printf("%s|%s", puntStrNomeCampo, puntStrTipoCampo);
+            // printf("%s|%s", puntStrNomeCampo, puntStrTipoCampo);
             TipoColonna tipo = TrovaTipoColonna(puntStrTipoCampo);
             if (tipo!=unknown){
                 md->colonne[md->nColonne].tipoColonna = tipo;
@@ -126,7 +133,7 @@ void aggiungiColonna(ModelloDati * md, char * rigaTesto){
         found = strtok (NULL, separators);
     }
     
-    printf("\n");
+    // printf("\n");
 }
 
 
@@ -146,7 +153,7 @@ char CharTipoCol(TipoColonna tipo){
 }
 
 void stampaTipiColonna(ModelloDati md){
-    printf("\n%d  colonne\n", md.nColonne);
+    printf("%d  colonne\n", md.nColonne);
     for (int i=0; i<md.nColonne; i++) {
         printf("%d col: %s %c\n", i+1, md.colonne[i].nome, CharTipoCol( md.colonne[i].tipoColonna) );
     }
@@ -193,7 +200,7 @@ Dati leggiFileSecondario(ModelloDati md){
     strcat(fname, md.fname);
     FILE * f = fopen(fname, "rt");
     if (f==NULL)return dati;
- 
+    
     // proviamo a leggere i dati:
     char buff[MAX_BUFF];
     int righe=0;
@@ -203,7 +210,8 @@ Dati leggiFileSecondario(ModelloDati md){
         long len = strlen(buff);
         // replace ending CR with 0:
         buff[len-1] = 0;
-       printf("%s\n", buff);
+        //printf("%s\n", buff);
+        AggiungiRecord(md, &dati, buff);
     }
 
     dati.ok = true;
@@ -212,7 +220,94 @@ Dati leggiFileSecondario(ModelloDati md){
 
 void stampaDati(Dati dati, ModelloDati md){
     printf("stampa dati\n");
+}
+
+
+
+
+// #include <ctype.h>
+bool isNumeric(char * s){
+    for(; *s!=0; s++){
+        if (!isdigit(*s))
+            return false;
+    }
     
+    return true;
+}
+
+void * allocaBuffXCella(TipoColonna tipo, char * Str){
+    size_t len = strlen(Str);
+    void * result = NULL;
+    switch(tipo){
+        case carattere:
+            result = malloc(len+1);
+            strcpy(result, Str);
+            break;
+        case intero:
+            if (isNumeric(Str)){
+                len = sizeof(int);
+                int * intPtr = (int*)malloc(len);
+                int n = atoi(Str);
+                *intPtr = n;
+                result = intPtr;
+            }
+            break;
+
+        case unknown:
+            break;
+    }
+    
+    return result;
+}
+
+
+
+void stampaRiga(Riga riga){
+    for (int i=0; i<riga.nColonne; i++) {
+        void * p = riga.ptrs[i];
+        int * pn = (int*)p;
+        char *s = (char*)p;
+        printf("DBG %d %s ", *pn, s);
+    }
+}
+
+
+void AggiungiRecord(ModelloDati md, Dati * dati, char * Str){
+
+    const char *  separators = " ";
+    int contToken = 0;
+
+    // al primo giro va passata stringa da analizzare.
+    char * found = strtok (Str, separators);
+    int rigaCorr = 0;
+    while (found)
+    {
+        printf("%s-", found);
+        contToken++;
+        if (contToken>md.nColonne) break; // NON dobbiamo superare quando nel file principale
+        
+        if (contToken == 1 ){ // se primo token alloco:
+            // se all' inzio ptr NULL, alloca 1 elemento
+            dati->righe = realloc(dati->righe,  sizeof(Riga));
+            rigaCorr=dati->nRighe;
+            memset(&dati->righe[rigaCorr], 0, sizeof(Riga));
+            dati->nRighe++;
+        }
+        TipoColonna tipo = md.colonne[contToken-1].tipoColonna;
+        dati->righe[rigaCorr].ptrs[contToken-1] = allocaBuffXCella(tipo, found);
+        dati->righe[rigaCorr].nColonne++;
+
+        // for debug:
+        if (contToken==md.nColonne){
+            Riga debugRiga = dati->righe[rigaCorr];
+            stampaRiga(debugRiga);
+        }
+            
+        found = strtok (NULL, separators);
+    }
+    
+    printf("\n");
+
 }
 
 

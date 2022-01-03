@@ -1,6 +1,6 @@
 //
 //  main3.h
-//  AnagraficaStudehti
+//  AnagraficaStudenti
 //
 //  Created by ing.conti on 02 JAN 2022.
 
@@ -45,7 +45,7 @@ typedef struct Dati{
 //protos:
 ModelloDati leggiFilePrincipale(void);
 Dati leggiFileSecondario(ModelloDati md);
-void stampaDati(Dati dati);
+void stampaDati(Dati dati, ModelloDati md);
 
 
 
@@ -55,7 +55,7 @@ int main(int argc, const char * argv[]) {
     if(md.ok) {
         dati = leggiFileSecondario(md);
         if(dati.ok) {
-            stampaDati(dati);
+            stampaDati(dati, md);
         }
     }
     return 0;
@@ -135,7 +135,7 @@ Dati leggiFileSecondario(ModelloDati md){
     return dati;
 }
 
-void stampaDati(Dati md){
+void stampaDati(Dati dati, ModelloDati md){
     printf("stampa dati\n");
 }
 

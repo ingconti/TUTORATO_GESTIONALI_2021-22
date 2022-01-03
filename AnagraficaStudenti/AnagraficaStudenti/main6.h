@@ -1,12 +1,12 @@
 //
-//  main4.h
+//  main6.h
 //  AnagraficaStudenti
 //
 //  Created by ing.conti on 02 JAN 2022.
 
 
 #define MAX_PATH 1024
-#define MAX_LEN_NOME_COLONNA 35
+#define MAX_LEN_NOME_COLONNA 35 // in effetti era x le stringhe dei valori... usiamo unica define
 #define MAX_N_COLONNE 10
 
 // tipi di colonne
@@ -46,7 +46,8 @@ typedef struct Dati{
 ModelloDati leggiFilePrincipale(void);
 Dati leggiFileSecondario(ModelloDati md);
 void stampaDati(Dati dati, ModelloDati md);
-
+void stampaTipiColonna(ModelloDati md);
+void AggiungiRecord(ModelloDati md, Dati * dati, char * Str);
 
 
 int main(int argc, const char * argv[]) {
@@ -54,6 +55,7 @@ int main(int argc, const char * argv[]) {
     ModelloDati md = leggiFilePrincipale();
     Dati dati;
     if(md.ok) {
+        // stampaTipiColonna(md);
         dati = leggiFileSecondario(md);
         if(dati.ok) {
             stampaDati(dati, md);
@@ -79,6 +81,19 @@ size_t grandezzaFile(FILE *f){
     return dim;
 }
 
+TipoColonna TrovaTipoColonna(char * puntStrTipoCampo){
+    // ipotizziamo valori fissi: (solo 2 casi, altriment FOR su array di coppie stringa, enum)
+    if (strcasecmp(puntStrTipoCampo, "carattere") == 0) // case isenstivie
+        return carattere;
+    
+    if (strcasecmp(puntStrTipoCampo, "intero") == 0)
+        return intero;
+    
+    return unknown;
+}
+
+
+
 void aggiungiColonna(ModelloDati * md, char * rigaTesto){
     //check su limite raggiunto
     if (md->nColonne == MAX_N_COLONNE)return;
@@ -89,26 +104,53 @@ void aggiungiColonna(ModelloDati * md, char * rigaTesto){
     char * puntStrNomeCampo = NULL;
     char * puntStrTipoCampo = NULL;
 
-    // al primo giro va psssata stringa da analizzare.
+    // al primo giro va passata stringa da analizzare.
     char * found = strtok (rigaTesto, separators);
     while (found)
     {
         //printf("%s ", found);
         contToken++;
         if (contToken>=MAX_N_COLONNE * 2) break; //ogni colonna DUE stringhe
-        
         // creo coppie:
         if (contToken %2 == 1){
             puntStrNomeCampo = found;
         }else{
             puntStrTipoCampo = found;
-            // proceess them:
-            printf("%s|%s", puntStrNomeCampo, puntStrTipoCampo);
+            // printf("%s|%s", puntStrNomeCampo, puntStrTipoCampo);
+            TipoColonna tipo = TrovaTipoColonna(puntStrTipoCampo);
+            if (tipo!=unknown){
+                md->colonne[md->nColonne].tipoColonna = tipo;
+                strcpy(md->colonne[md->nColonne].nome,puntStrNomeCampo);
+                md->nColonne++;
+            }
         }
         found = strtok (NULL, separators);
     }
     
-    printf("\n");
+    // printf("\n");
+}
+
+
+
+char CharTipoCol(TipoColonna tipo){
+    switch (tipo) {
+        case intero:
+            return 'I';
+            break;
+
+        case carattere:
+            return 'C';
+        default:
+            break;
+    }
+    return '?';
+}
+
+void stampaTipiColonna(ModelloDati md){
+    printf("%d  colonne\n", md.nColonne);
+    for (int i=0; i<md.nColonne; i++) {
+        printf("%d col: %s %c\n", i+1, md.colonne[i].nome, CharTipoCol( md.colonne[i].tipoColonna) );
+    }
 }
 
 
@@ -152,7 +194,7 @@ Dati leggiFileSecondario(ModelloDati md){
     strcat(fname, md.fname);
     FILE * f = fopen(fname, "rt");
     if (f==NULL)return dati;
- 
+    
     // proviamo a leggere i dati:
     char buff[MAX_BUFF];
     int righe=0;
@@ -162,7 +204,8 @@ Dati leggiFileSecondario(ModelloDati md){
         long len = strlen(buff);
         // replace ending CR with 0:
         buff[len-1] = 0;
-       printf("%s\n", buff);
+        //printf("%s\n", buff);
+        AggiungiRecord(md, &dati, buff);
     }
 
     dati.ok = true;
@@ -172,6 +215,26 @@ Dati leggiFileSecondario(ModelloDati md){
 void stampaDati(Dati dati, ModelloDati md){
     printf("stampa dati\n");
     
+}
+
+
+void AggiungiRecord(ModelloDati md, Dati * dati, char * Str){
+
+    const char *  separators = " ";
+    int contToken = 0;
+
+    // al primo giro va passata stringa da analizzare.
+    char * found = strtok (Str, separators);
+    while (found)
+    {
+        printf("%s-", found);
+        contToken++;
+        if (contToken>=md.nColonne) break; // NON dobbiamo superare quando nel file principale
+        found = strtok (NULL, separators);
+    }
+    
+    printf("\n");
+
 }
 
 

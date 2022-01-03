@@ -64,7 +64,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
             endingLineNumber = "173"
-            landmarkName = "stampaDati(md)"
+            landmarkName = "stampaDati(dati, md)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -87,22 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CC1CFD3E-1E2C-4FD0-A4B6-20DC04A0D4B0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../../../../../../../BigSur_110/Users/ingconti/Documents/GIT-BigSur/GITHUB/TUTORATO_GESTIONALI_2021-22/AnagraficaStudenti/AnagraficaStudenti/main5.h"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "aggiungiColonna(md, rigaTesto)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E2798B98-44B1-4B01-9401-1760C2D548BC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -113,6 +97,86 @@
             startingLineNumber = "149"
             endingLineNumber = "149"
             landmarkName = "stampaTipiColonna(md)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "46DE2212-7304-4E4E-B5CF-C48349A77B8C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../../../BigSur_110/Users/ingconti/Documents/GIT-BigSur/GITHUB/TUTORATO_GESTIONALI_2021-22/AnagraficaStudenti/AnagraficaStudenti/main6.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "stampaTipiColonna(md)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E0DB425-FD3E-4397-B905-4BEEA319D00B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../../../BigSur_110/Users/ingconti/Documents/GIT-BigSur/GITHUB/TUTORATO_GESTIONALI_2021-22/AnagraficaStudenti/AnagraficaStudenti/main6.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "AggiungiRecord(md, dati, Str)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD9512D1-5C7D-4FB7-8B33-5FC91E42742E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../../../BigSur_110/Users/ingconti/Documents/GIT-BigSur/GITHUB/TUTORATO_GESTIONALI_2021-22/AnagraficaStudenti/AnagraficaStudenti/main6.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "AggiungiRecord(md, dati, Str)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1574C47-80E7-48A1-9796-8F0D061FAF0C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../../../BigSur_110/Users/ingconti/Documents/GIT-BigSur/GITHUB/TUTORATO_GESTIONALI_2021-22/AnagraficaStudenti/AnagraficaStudenti/main9.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
+            landmarkName = "rilascia(dati)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB0AF387-36A4-4067-A840-E860CAD8C2AE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../../../BigSur_110/Users/ingconti/Documents/GIT-BigSur/GITHUB/TUTORATO_GESTIONALI_2021-22/AnagraficaStudenti/AnagraficaStudenti/main9.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "rilascia(dati)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

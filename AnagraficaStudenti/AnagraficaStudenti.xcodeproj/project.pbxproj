@@ -25,6 +25,10 @@
 /* Begin PBXFileReference section */
 		CE422BB82781C31600B4E8DF /* AnagraficaStudenti */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AnagraficaStudenti; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4D708D2782F5AE00BC96E1 /* main5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main5.h; sourceTree = "<group>"; };
+		CE4D708E278306E200BC96E1 /* main6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main6.h; sourceTree = "<group>"; };
+		CE4D708F2783106100BC96E1 /* main7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main7.h; sourceTree = "<group>"; };
+		CE4D70902783425300BC96E1 /* main8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main8.h; sourceTree = "<group>"; };
+		CE4D7091278364C800BC96E1 /* main9.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main9.h; sourceTree = "<group>"; };
 		CEC333AB2782337C001628B5 /* main3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main3.h; sourceTree = "<group>"; };
 		CEC333AC2782337C001628B5 /* main4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main4.h; sourceTree = "<group>"; };
 		CEC333AD2782337C001628B5 /* main1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main1.h; sourceTree = "<group>"; };
@@ -68,6 +72,10 @@
 				CEC333AB2782337C001628B5 /* main3.h */,
 				CEC333AC2782337C001628B5 /* main4.h */,
 				CE4D708D2782F5AE00BC96E1 /* main5.h */,
+				CE4D708E278306E200BC96E1 /* main6.h */,
+				CE4D708F2783106100BC96E1 /* main7.h */,
+				CE4D70902783425300BC96E1 /* main8.h */,
+				CE4D7091278364C800BC96E1 /* main9.h */,
 			);
 			name = AnagraficaStudenti;
 			path = "../../../../../../../../BigSur_110/Users/ingconti/Documents/GIT-BigSur/GITHUB/TUTORATO_GESTIONALI_2021-22/AnagraficaStudenti/AnagraficaStudenti";
