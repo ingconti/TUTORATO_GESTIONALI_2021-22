@@ -71,6 +71,7 @@ ModelloDati leggiFilePrincipale(void){
     strcat(fname, STD_NAME);
     FILE * f = fopen(fname, "rt");
     if (f==NULL)return md;
+    
     // proviamo a leggere i dati:
     char buff[MAX_BUFF];
     int righe=0;
