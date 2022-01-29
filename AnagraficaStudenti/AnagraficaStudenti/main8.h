@@ -328,7 +328,6 @@ void stampaRiga(Riga riga){
 
 
 void AggiungiRecord(ModelloDati md, Dati * dati, char * Str){
-
     const char *  separators = " ";
     int contToken = 0;
 
@@ -342,11 +341,14 @@ void AggiungiRecord(ModelloDati md, Dati * dati, char * Str){
         if (contToken>md.nColonne) break; // NON dobbiamo superare quando nel file principale
         
         if (contToken == 1 ){ // se primo token alloco:
-            // se all' inzio ptr NULL, alloca 1 elemento
-            dati->righe = realloc(dati->righe,  sizeof(Riga));
-            rigaCorr=dati->nRighe;
-            memset(&dati->righe[rigaCorr], 0, sizeof(Riga));
+
+            rigaCorr = dati->nRighe;// salvo x sapere riga...
             dati->nRighe++;
+            
+            // se all' inizio ptr NULL, alloca 1 elemento, se no, numero righe:
+            size_t newSize = sizeof(Riga) * dati->nRighe;
+            dati->righe = realloc(dati->righe,  newSize);
+            dati->righe[rigaCorr].nColonne = 0;
         }
         TipoColonna tipo = md.colonne[contToken-1].tipoColonna;
         dati->righe[rigaCorr].ptrs[contToken-1] = allocaBuffXCella(tipo, found);
